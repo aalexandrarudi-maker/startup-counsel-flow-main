@@ -1,0 +1,149 @@
+# Law Firm Companion - Startup Counsel Flow
+
+## Project Overview
+This is a **Law Firm Growth Dashboard** for a solo European startup lawyer, built as a mobile-first React application. It's designed to help manage daily tasks, client pipeline, content creation, compliance deadlines, and calendar scheduling with motivational coaching elements.
+
+## Tech Stack & Architecture
+- **Frontend**: React 18 + TypeScript + Vite
+- **UI Framework**: shadcn/ui + Radix UI primitives
+- **Styling**: Tailwind CSS with custom HSL color system
+- **State Management**: React hooks + TanStack React Query
+- **Routing**: React Router DOM v6
+- **Calendar**: FullCalendar with Google Calendar integration
+- **Forms**: React Hook Form + Zod validation
+- **Notifications**: Sonner toasts
+- **Build Tool**: Vite with SWC
+- **Development**: ESLint + TypeScript strict mode
+
+## Key Dependencies to Preserve
+- `@fullcalendar/*` packages for calendar functionality
+- `@radix-ui/*` for accessible UI primitives
+- `@tanstack/react-query` for data fetching
+- `lucide-react` for consistent iconography
+- `date-fns` for date manipulation
+- `sonner` for toast notifications
+- `lovable-tagger` for development mode component tagging
+
+## Design System Guidelines
+### Colors (HSL-based)
+- Primary: `217 91% 60%` (light blue)
+- Accent: `20 90% 48%` (energetic orange)
+- Success: `142 71% 45%` (green)
+- Warning: `46 94% 50%` (yellow)
+- Danger: `0 84% 60%` (red)
+- Background: `208 100% 97%` (alice blue)
+- All colors defined in `src/index.css` using CSS custom properties
+
+### Component Patterns
+- Use shadcn/ui components from `@/components/ui/`
+- Consistent card-based layout with hover effects
+- Mobile-first responsive design
+- Bottom navigation for mobile UX
+- Motivational messaging and progress tracking
+- Custom animations: fade-in, scale-in, slide-in-right
+
+### File Structure
+```
+src/
+├── components/
+│   ├── ui/ (shadcn components)
+│   ├── layout/ (AppLayout)
+│   ├── navigation/ (BottomNav)
+│   └── calendar/ (Scheduler)
+├── pages/ (route components)
+├── hooks/ (custom hooks)
+└── lib/ (utilities)
+```
+
+## Application Features
+1. **Dashboard (/)**: Daily focus tasks, progress tracking, thought leadership pipeline, compliance status, client pipeline overview, weekly calendar
+2. **Tasks (/tasks)**: Daily momentum tracker with productivity coaching
+3. **Content (/content)**: Startup legal content engine for founder engagement
+4. **Clients (/clients)**: Client pipeline CRM with funnel stages
+5. **Calendar (/calendar)**: Full calendar with scheduling capabilities
+6. **More (/more)**: Additional features and settings
+
+## Business Rules & Constraints
+- Target audience: European startup founders and SaaS companies
+- Revenue goal: €130k annually
+- Content focus: Compliance, legal gotchas, regulatory updates
+- Mobile-first design for on-the-go usage
+- Motivational coaching tone throughout the app
+- Progress tracking and goal-oriented UI
+
+## Development Guidelines
+### Code Style
+- Use TypeScript strict mode
+- Prefer functional components with hooks
+- Use `const` assertions for immutable data
+- Import aliases: `@/` for src directory
+- ESLint rules: React Hooks, React Refresh, no unused vars disabled
+Follow @project-documentation.md and @brand-guidelines.md strictly Maintain exact visual design from Lovable prototype Use defined color palette and typography system Never modify established design patterns Implement TypeScript with comprehensive error handling Store all API keys in .env.local 
+
+### Component Conventions
+- Export default for page components
+- Named exports for utility components
+- Props interfaces should be defined inline or as separate interfaces
+- Use `PropsWithChildren` for layout components
+- Helmet for SEO meta tags on all pages
+
+### State Management
+- Local state with `useState` for simple data
+- `useMemo` for computed values
+- React Query for server state (when implemented)
+- No global state management currently used
+
+### Styling Patterns
+- Use Tailwind utility classes
+- Custom components in `@layer components`
+- Responsive breakpoints: mobile-first approach
+- Animations: prefer CSS custom properties over hardcoded values
+- Consistent spacing: 4-unit grid system
+
+## Server Configuration
+- Vite dev server runs on port 8080
+- Host set to "::" for all interfaces
+- Component tagging enabled in development mode
+- Path alias `@` resolves to `./src`
+
+## Error Handling Patterns
+- Toast notifications for user feedback
+- Graceful degradation for missing data
+- Form validation with React Hook Form + Zod
+- TypeScript strict mode for compile-time safety
+
+## SEO & Performance
+- React Helmet Async for meta tags
+- Canonical URLs on all pages
+- Descriptive page titles and meta descriptions
+- Lazy loading and code splitting (to be implemented)
+- Mobile-optimized viewport and touch targets
+
+## External Integrations
+- Google Calendar (FullCalendar integration)
+- Lovable platform for deployment and updates
+- No current API integrations or external services
+
+## Common Tasks
+- Adding new pages: Create in `src/pages/`, add route to `App.tsx`, update `BottomNav.tsx`
+- New components: Follow shadcn/ui patterns, use Radix primitives
+- Styling: Extend Tailwind config, use HSL color system
+- Icons: Use Lucide React for consistency
+- Forms: React Hook Form + Zod validation pattern
+
+## Critical Files
+- `package.json`: Dependencies and scripts
+- `vite.config.ts`: Build configuration
+- `tailwind.config.ts`: Design system tokens
+- `src/index.css`: Color system and base styles
+- `components.json`: shadcn/ui configuration
+- `src/App.tsx`: Route configuration
+- `src/components/layout/AppLayout.tsx`: Main layout wrapper
+
+## Notes for AI Assistance
+- This is a Lovable-generated project with automatic deployments
+- Focus on mobile-first, motivational UX for busy lawyers
+- Maintain the startup/founder-focused messaging and tone
+- Preserve the HSL color system and custom CSS properties
+- Use existing UI patterns and component structure
+- Consider European legal context and compliance requirements
